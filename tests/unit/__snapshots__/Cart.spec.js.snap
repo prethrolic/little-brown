@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart.vue render cart correctly 1`] = `
+<div
+  class="cart-container"
+>
+  <div
+    class="cart-header-container"
+  >
+    <h2
+      class="cart-title"
+    >
+      Cart
+    </h2>
+     
+    <div
+      class="cart-clear-button"
+    >
+      
+      Clear All
+    
+    </div>
+  </div>
+   
+  <div
+    class="cart-products-container"
+  >
+    <cartitem-stub
+      book="[object Object]"
+      count="2"
+    />
+    <cartitem-stub
+      book="[object Object]"
+      count="1"
+    />
+    <cartitem-stub
+      book="[object Object]"
+      count="1"
+    />
+    <cartitem-stub
+      book="[object Object]"
+      count="2"
+    />
+  </div>
+   
+  <div
+    class="cart-total-price-container"
+  >
+    <table>
+      <tr>
+        <td
+          class="cart-small-label"
+        >
+          Subtotal
+        </td>
+         
+        <td
+          class="cart-small-value"
+        >
+          ฿1850.00
+        </td>
+      </tr>
+       
+      <tr>
+        <td
+          class="cart-small-label"
+        >
+          Discounts
+        </td>
+         
+        <td
+          class="cart-small-value"
+        >
+          - ฿114.40
+        </td>
+      </tr>
+       
+      <tr>
+        <td
+          class="cart-small-label"
+        >
+          Sales Tax
+        </td>
+         
+        <td
+          class="cart-small-value"
+        >
+          ฿0.00
+        </td>
+      </tr>
+    </table>
+     
+    <div
+      class="cart-divider"
+    />
+     
+    <table>
+      <tr>
+        <td
+          class="cart-large-label"
+        >
+          Total
+        </td>
+         
+        <td
+          class="cart-large-value"
+        >
+          ฿1735.60
+        </td>
+      </tr>
+    </table>
+  </div>
+   
+  <div
+    class="cart-payment-button"
+  >
+    
+    Pay with Cash
+  
+  </div>
+</div>
+`;

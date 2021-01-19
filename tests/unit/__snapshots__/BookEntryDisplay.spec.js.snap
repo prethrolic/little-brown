@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookEntryDisplay.vue render book details correctly 1`] = `
+<div
+  class="bed-container"
+>
+  <div
+    class="bed-cover-img-container"
+  >
+    <img
+      class="bed-cover-img"
+      src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855652.jpg"
+    />
+  </div>
+   
+  <div
+    class="bed-detail-container"
+  >
+    <div
+      class="bed-title"
+    >
+      Harry Potter and the Philosopher's Stone (I)
+    </div>
+     
+    <!---->
+     
+    <div
+      class="bed-price"
+    >
+      ฿350
+    </div>
+  </div>
+</div>
+`;

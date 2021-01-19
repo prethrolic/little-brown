@@ -118,6 +118,9 @@ export default {
       },
     },
   },
+  mounted() {
+    this.getCart();
+  },
 };
 </script>
 <style lang="scss" scoped>
