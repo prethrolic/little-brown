@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookListPage.vue render all books 1`] = `
+<div
+  class="blp-view-container"
+>
+  <cart-stub />
+   
+  <div
+    class="blp-catalog-wrap"
+  >
+    <div
+      class="blp-header-container"
+    >
+      <h1
+        class="blp-store-title"
+      >
+        Little Brown Book Shop
+      </h1>
+    </div>
+     
+    <div
+      class="blp-tool-container"
+    >
+      <div
+        class="blp-search-bar"
+      >
+        <div
+          class="icon icon-search"
+        />
+         
+        <input
+          placeholder="Search.."
+          type="text"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="blp-products-container"
+    >
+      <div
+        class="blp-products-grid"
+      >
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

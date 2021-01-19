@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartItem.vue render cart items correctly 1`] = `
+<div
+  class="cit-container"
+>
+  <img
+    class="cit-cover-img"
+    src="https://d1w7fb2mkkr3kw.cloudfront.net/assets/images/book/mid/9781/4088/9781408855652.jpg"
+  />
+   
+  <div
+    class="cit-book-title"
+  >
+    Harry Potter and the Philosopher's Stone (I)
+  </div>
+   
+  <div
+    class="cit-count-modifier"
+  >
+    <div
+      class="cit-button"
+    >
+      <div
+        class="icon icon-minus"
+      />
+    </div>
+     
+    <div
+      class="cit-count-display"
+    >
+      2
+    </div>
+     
+    <div
+      class="cit-button"
+    >
+      <div
+        class="icon icon-plus"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="cit-total-price"
+  >
+    ฿700
+  </div>
+</div>
+`;
