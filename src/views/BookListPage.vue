@@ -19,7 +19,7 @@
         <div class='blp-products-grid'>
           <BookEntryDisplay
             v-for='book in displayBookList'
-            v-bind:key='book.id'
+            :key='book.id'
             :book='book'
           />
         </div>
@@ -58,7 +58,7 @@ export default {
         .then((data) => {
           const bookList = data.books;
           const newBookList = bookList.map((entry) => {
-            const isPromoted = entry.title.includes(PROMOTED_TITLE);
+            const isPromoted = entry.title.toLowerCase().includes(PROMOTED_TITLE.toLowerCase());
             return { ...entry, isPromoted };
           });
 
@@ -67,7 +67,9 @@ export default {
         });
     },
     onBookSearch() {
-      this.displayBookList = this.bookList.filter((entry) => entry.title.includes(this.keyword));
+      this.displayBookList = this.bookList.filter(
+        (entry) => entry.title.toLowerCase().includes(this.keyword.toLowerCase()),
+      );
     },
   },
   watch: {
@@ -96,21 +98,19 @@ export default {
   &-view-container {
     min-width: 320px;
     width: 100%;
-    margin: auto;
-    display: inline-flex;
+    display: flex;
   }
 
   &-header-container {
-    display: flex;
-    padding: 0 24px 32px 24px;
+    padding: 0 24px;
     align-content: space-between;
   }
 
   &-tool-container {
-    display: flex;
-    padding: 24px;
+    padding: 0 24px 24px 24px;
     align-content: space-between;
   }
+
   &-search-bar {
     height: fit-content;
     width: fit-content;
@@ -133,11 +133,12 @@ export default {
   }
 
   &-catalog-wrap {
-    width: 100%;
+    flex: 1;
     height: 100vh;
+    padding: 24px 0;
     display: flex;
     flex-direction: column;
-    padding: 24px 0;
+    align-items: flex-start;
     text-align: left;
   }
 

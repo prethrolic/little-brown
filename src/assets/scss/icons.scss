@@ -2,7 +2,7 @@ $url: '../assets/png/icon.png';
 
 .icon-cart_20 {
   width: 20px; height: 20px;
-  background: url($url) -226px -10px;
+  background: url($url) -190px -10px;
 }
 
 .icon-cart {
@@ -12,7 +12,7 @@ $url: '../assets/png/icon.png';
 
 .icon-logout_20 {
   width: 20px; height: 20px;
-  background: url($url) -266px -10px;
+  background: url($url) -230px -10px;
 }
 
 .icon-logout {
@@ -25,12 +25,12 @@ $url: '../assets/png/icon.png';
   background: url($url) -82px -10px;
 }
 
+.icon-plus {
+  width: 16px; height: 16px;
+  background: url($url) -118px -10px;
+}
+
 .icon-search {
   width: 16px; height: 16px;
   background: url($url) -154px -10px;
-}
-
-.icon-trash {
-  width: 16px; height: 16px;
-  background: url($url) -190px -10px;
 }

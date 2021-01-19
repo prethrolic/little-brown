@@ -7,13 +7,13 @@
 <style lang="scss">
 @import './assets/scss/variables.scss';
 
-body,html {
-    margin: 0;
-    padding: 0;
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input {

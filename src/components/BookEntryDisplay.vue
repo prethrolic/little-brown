@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     onClick() {
-      this.$store.commit('add_to_cart', this.book);
+      this.$store.dispatch('add_to_cart', this.book);
       this.clicked = true;
     },
   },
@@ -58,7 +58,7 @@ export default {
     &.clicked {
       -webkit-box-shadow: 0px 0px 21px -5px rgba(199,199,199,0.44);
       box-shadow: 0px 0px 21px -5px rgba(199,199,199,0.44);
-      animation: 0.4s bounce ease-in-out;
+      animation: 0.2s bounce ease-in-out;
     }
   }
 
