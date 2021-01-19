@@ -1,0 +1,16 @@
+// color palette
+$primary: #00B900;
+$secondary: #202739;
+$light-gray: #f2f2f2;
+$dark-gray: #a9a9a9;
+$accent: #e74241;
+
+// keyframe
+@keyframes shrink {
+  from {
+      transform: scale(1);
+  }
+  to {
+      transform: scale(0.8);
+  }
+}
