@@ -2,13 +2,18 @@
   <div class='blp-view-container'>
     <Cart />
     <div class='blp-catalog-wrap'>
-      <div class='blp-search-bar'>
+      <div class='blp-header-container'>
+        <h1 class='blp-store-title'>Little Brown Book Shop</h1>
+      </div>
+      <div class='blp-tool-container'>
+        <div class='blp-search-bar'>
         <div class='icon icon-search' />
         <input
           v-model='keyword'
           type='text'
           placeholder='Search..'
         >
+      </div>
       </div>
       <div class='blp-products-container'>
         <div class='blp-products-grid'>
@@ -95,21 +100,23 @@ export default {
     display: inline-flex;
   }
 
-  &-catalog-wrap {
-    width: 100%;
-    height: 100vh;
+  &-header-container {
     display: flex;
-    flex-direction: column;
-    padding: 48px 0;
-    text-align: left;
+    padding: 0 24px 32px 24px;
+    align-content: space-between;
   }
 
+  &-tool-container {
+    display: flex;
+    padding: 24px;
+    align-content: space-between;
+  }
   &-search-bar {
+    height: fit-content;
     width: fit-content;
     padding: 4px 16px;
     background-color: $light-gray;
     border-radius: 8px;
-    margin-left: 24px;
 
     & > input {
       display: inline-block;
@@ -123,6 +130,15 @@ export default {
       margin-right: 8px;
       margin-bottom: -2px;
     }
+  }
+
+  &-catalog-wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    text-align: left;
   }
 
   &-products-container {
@@ -139,5 +155,6 @@ export default {
     grid-gap: 16px;
     padding: 24px;
   }
+
 }
 </style>
