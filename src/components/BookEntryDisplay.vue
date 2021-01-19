@@ -1,5 +1,9 @@
 <template>
-  <div class='bed-container'>
+  <div
+    :class="['bed-container', { 'clicked': clicked }]"
+    @click='onClick'
+    @animationend='clicked = false'
+  >
     <div class='bed-cover-img-container'>
       <img class='bed-cover-img' :src="book.cover">
     </div>
@@ -15,6 +19,17 @@ export default {
   name: 'BookEntryDisplay',
   props: {
     book: Object,
+  },
+  data() {
+    return {
+      clicked: false,
+    };
+  },
+  methods: {
+    onClick() {
+      this.$store.commit('add_to_cart', this.book);
+      this.clicked = true;
+    },
   },
 };
 </script>
@@ -41,7 +56,9 @@ export default {
     }
 
     &.clicked {
-      animation: 0.4s shrink ease-in-out;
+      -webkit-box-shadow: 0px 0px 21px -5px rgba(199,199,199,0.44);
+      box-shadow: 0px 0px 21px -5px rgba(199,199,199,0.44);
+      animation: 0.4s bounce ease-in-out;
     }
   }
 

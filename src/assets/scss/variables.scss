@@ -6,11 +6,14 @@ $dark-gray: #a9a9a9;
 $accent: #e74241;
 
 // keyframe
-@keyframes shrink {
-  from {
+@keyframes bounce {
+  0% {
       transform: scale(1);
   }
-  to {
+  50% {
       transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
   }
 }
