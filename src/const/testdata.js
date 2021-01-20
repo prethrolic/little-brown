@@ -71,3 +71,8 @@ export const cart = {
 };
 
 export const inPromotion = ["9781408855652", "9781408855669", "9781408855676"];
+
+export const user = {
+  displayName: 'John Doe',
+  pictureUrl: 'https://pbs.twimg.com/profile_images/1269585418107805697/6QKUkoWJ_400x400.jpg',
+}

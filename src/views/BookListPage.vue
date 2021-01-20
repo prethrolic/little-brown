@@ -4,6 +4,15 @@
     <div class='blp-catalog-wrap'>
       <div class='blp-header-container'>
         <h1 class='blp-store-title'>Little Brown Book Shop</h1>
+        <div class='blp-profile-container'>
+          <div class='blp-profile-picture'>
+            <img :src='pictureUrl' />
+          </div>
+          <div v-html='displayName' class='blp-profile-name' />
+          <div class='blp-logout-button' @click='doLogout'>
+            Logout
+          </div>
+        </div>
       </div>
       <div class='blp-tool-container'>
         <div class='blp-search-bar'>
@@ -49,6 +58,12 @@ export default {
     };
   },
   methods: {
+    doLogout() {
+      if (this.$liff.isLoggedIn()) {
+        this.$liff.logout();
+        window.location.reload();
+      }
+    },
     getBookList() {
       fetch(process.env.VUE_APP_BOOK_LIST_API, {
         method: 'GET',
@@ -70,6 +85,14 @@ export default {
       this.displayBookList = this.bookList.filter(
         (entry) => entry.title.toLowerCase().includes(this.keyword.toLowerCase()),
       );
+    },
+  },
+  computed: {
+    displayName() {
+      return this.$store.state.user.displayName;
+    },
+    pictureUrl() {
+      return this.$store.state.user.pictureUrl;
     },
   },
   watch: {
@@ -102,12 +125,65 @@ export default {
   }
 
   &-header-container {
-    padding: 0 24px;
-    align-content: space-between;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 24px;
+  }
+
+  &-store-title {
+    margin: 0;
+  }
+
+  &-profile-container {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    border: 1px solid $dark-gray;
+    border-radius: 12px;
+    padding: 8px;
+    margin-left: auto;
+  }
+
+  &-profile-picture {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right: 8px;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-profile-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 16px;
+  }
+
+  &-logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    background-color: $secondary;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $secondary-hover;
+    }
   }
 
   &-tool-container {
-    padding: 0 24px 24px 24px;
+    padding: 24px;
     align-content: space-between;
   }
 
@@ -144,7 +220,7 @@ export default {
 
   &-products-container {
     width: 100%;
-    flex-grow: 1;
+    height: 100%;
     overflow-y: scroll;
   }
 
