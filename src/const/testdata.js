@@ -75,4 +75,11 @@ export const inPromotion = ["9781408855652", "9781408855669", "9781408855676"];
 export const user = {
   displayName: 'John Doe',
   pictureUrl: 'https://pbs.twimg.com/profile_images/1269585418107805697/6QKUkoWJ_400x400.jpg',
-}
+};
+
+export const paymentInfo = {
+  subtotal: '1850.00',
+  discount: '114.40',
+  total: '1735.60',
+  cash: '2000',
+};

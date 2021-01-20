@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PaymentModal.vue not render when isOpen is false 1`] = `<!---->`;
+
+exports[`PaymentModal.vue render correctly for cash input 1`] = `
+<div
+  class="pmd-backdrop"
+>
+  <div
+    class="pmd-container"
+  >
+    <div
+      class="pmd-body"
+    >
+      <h1
+        class="pmd-title"
+      >
+        
+        Payment
+      
+      </h1>
+       
+      <form>
+        <label
+          class="pmd-form-label"
+        >
+          
+          Please input amount of cash
+        
+        </label>
+         
+        <div
+          class="pmd-input-wrap"
+        >
+          <div
+            class="pmd-input-prefix"
+          >
+            ฿
+          </div>
+           
+          <input
+            class="pmd-cash-input"
+            placeholder="ex. 2000"
+          />
+        </div>
+         
+        <div
+          class="pmd-error-message"
+        >
+          <!---->
+        </div>
+         
+        <button
+          class="pmd-checkout-button"
+        >
+          Checkout
+        </button>
+      </form>
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`PaymentModal.vue render correctly for processing 1`] = `
+<div
+  class="pmd-backdrop"
+>
+  <div
+    class="pmd-container"
+  >
+    <!---->
+     
+    <div
+      class="pmd-body"
+    >
+      <div
+        class="pmd-spinner"
+      >
+        <div
+          class="icon-circle-notch"
+        />
+      </div>
+       
+      <div
+        class="pmd-spinner-text"
+      >
+        
+        processing change of ฿1000.00 to customer..
+      
+      </div>
+    </div>
+  </div>
+</div>
+`;

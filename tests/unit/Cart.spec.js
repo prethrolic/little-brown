@@ -5,8 +5,40 @@ import { cart, inPromotion } from '@/const/testdata.js';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
+const originalDate = global.Date;
+const mockDate = new Date(1466424490000);
 
 describe('Cart.vue', () => {
+  beforeEach(() => {
+    global.Date = jest.fn().mockImplementation(() => mockDate);
+  });
+
+  afterEach(() => { 
+    global.Date.mockClear();
+    global.Date = originalDate; 
+  });
+
+  it('render disbaled payment button when cart is empty', async () => {
+    const wrapper = shallowMount(Cart, {
+      mocks: {
+        $store: {
+          state: {
+            cart: {},
+            inPromotion: [],
+          },
+        },
+      },
+      localVue
+    });
+    await wrapper.setData({
+      cart: {},
+      cartItemList: [],
+    });
+    expect(wrapper.vm.$el.querySelectorAll('.cart-payment-button.disabled').length).toBe(1);
+    expect(wrapper.element).toMatchSnapshot();
+
+  });
+
   it('render cart correctly', async () => {
     const wrapper = shallowMount(Cart, {
       mocks: {

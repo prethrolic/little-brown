@@ -118,5 +118,129 @@ exports[`Cart.vue render cart correctly 1`] = `
     Pay with Cash
   
   </div>
+   
+  <paymentmodal-stub
+    total="1735.60"
+  />
+   
+  <receiptmodal-stub
+    cart="[object Object]"
+    date="Mon Jun 20 2016 19:08:10 GMT+0700 (Indochina Time)"
+    paymentinfo="[object Object]"
+  />
+</div>
+`;
+
+exports[`Cart.vue render disbaled payment button when cart is empty 1`] = `
+<div
+  class="cart-container"
+>
+  <div
+    class="cart-header-container"
+  >
+    <h2
+      class="cart-title"
+    >
+      Cart
+    </h2>
+     
+    <div
+      class="cart-clear-button"
+    >
+      
+      Clear All
+    
+    </div>
+  </div>
+   
+  <div
+    class="cart-products-container"
+  />
+   
+  <div
+    class="cart-total-price-container"
+  >
+    <table>
+      <tr>
+        <td
+          class="cart-small-label"
+        >
+          Subtotal
+        </td>
+         
+        <td
+          class="cart-small-value"
+        >
+          ฿0.00
+        </td>
+      </tr>
+       
+      <tr>
+        <td
+          class="cart-small-label"
+        >
+          Discounts
+        </td>
+         
+        <td
+          class="cart-small-value"
+        >
+          - ฿0.00
+        </td>
+      </tr>
+       
+      <tr>
+        <td
+          class="cart-small-label"
+        >
+          Sales Tax
+        </td>
+         
+        <td
+          class="cart-small-value"
+        >
+          ฿0.00
+        </td>
+      </tr>
+    </table>
+     
+    <div
+      class="cart-divider"
+    />
+     
+    <table>
+      <tr>
+        <td
+          class="cart-large-label"
+        >
+          Total
+        </td>
+         
+        <td
+          class="cart-large-value"
+        >
+          ฿0.00
+        </td>
+      </tr>
+    </table>
+  </div>
+   
+  <div
+    class="cart-payment-button disabled"
+  >
+    
+    Pay with Cash
+  
+  </div>
+   
+  <paymentmodal-stub
+    total="0.00"
+  />
+   
+  <receiptmodal-stub
+    cart="[object Object]"
+    date="Mon Jun 20 2016 19:08:10 GMT+0700 (Indochina Time)"
+    paymentinfo="[object Object]"
+  />
 </div>
 `;

@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReceiptModal.vue not render when isOpen is false 1`] = `<!---->`;
+
+exports[`ReceiptModal.vue render correctly with cart and payment information 1`] = `
+<div
+  class="rcm-backdrop"
+>
+  <h2
+    class="rcm-title"
+  >
+    Thank You for Shopping with Us!
+  </h2>
+   
+  <h3
+    class="rcm-subtitle"
+  >
+    here's your receipt
+  </h3>
+   
+  <div
+    class="rcm-receipt-container"
+  >
+    <div
+      class="rcm-receipt-body"
+    >
+      <h3
+        class="rcm-store-title"
+      >
+        Little Brown
+      </h3>
+       
+      <div
+        class="rcm-information"
+      >
+        <div>
+          Mon Jun 20 2016 19:08:10 GMT+0700 (Indochina Time)
+        </div>
+         
+        <div>
+          Service Cashier: John Doe
+        </div>
+      </div>
+       
+      <div
+        class="rcm-divider"
+      />
+       
+      <div
+        class="rcm-product-info"
+      >
+        <div>
+          Harry Potter and the Philosopher's Stone (I)
+        </div>
+         
+        <div>
+          2
+        </div>
+         
+        <div
+          style="text-align: right;"
+        >
+          700
+        </div>
+      </div>
+      <div
+        class="rcm-product-info"
+      >
+        <div>
+          Harry Potter and the Chamber of Secrets (II)
+        </div>
+         
+        <div>
+          1
+        </div>
+         
+        <div
+          style="text-align: right;"
+        >
+          350
+        </div>
+      </div>
+      <div
+        class="rcm-product-info"
+      >
+        <div>
+          Harry Potter and the Prisoner of Azkaban (III)
+        </div>
+         
+        <div>
+          1
+        </div>
+         
+        <div
+          style="text-align: right;"
+        >
+          340
+        </div>
+      </div>
+      <div
+        class="rcm-product-info"
+      >
+        <div>
+          The Monk of Mokha
+        </div>
+         
+        <div>
+          2
+        </div>
+         
+        <div
+          style="text-align: right;"
+        >
+          460
+        </div>
+      </div>
+       
+      <div
+        class="rcm-text"
+      >
+        <br />
+        Total 6 items
+      </div>
+       
+      <div
+        class="rcm-divider"
+      />
+       
+      <div
+        class="rcm-payment-info"
+      >
+        <div>
+          Subtotal
+        </div>
+         
+        <div>
+          1850.00
+        </div>
+      </div>
+       
+      <div
+        class="rcm-payment-info"
+      >
+        <div>
+          Discount
+        </div>
+         
+        <div>
+          - 114.40
+        </div>
+      </div>
+       
+      <div
+        class="rcm-payment-info"
+      >
+        <div>
+          Sales Tax
+        </div>
+         
+        <div>
+          + 0.00
+        </div>
+      </div>
+       
+      <div
+        class="rcm-divider"
+      />
+       
+      <div
+        class="rcm-payment-info large"
+      >
+        <div>
+          Total
+        </div>
+         
+        <div>
+          ฿ 1735.60
+        </div>
+      </div>
+       
+      <div
+        class="rcm-divider"
+      />
+       
+      <div
+        class="rcm-payment-info"
+      >
+        <div>
+          Cash
+        </div>
+         
+        <div>
+          2000
+        </div>
+      </div>
+       
+      <div
+        class="rcm-payment-info"
+      >
+        <div>
+          Change
+        </div>
+         
+        <div>
+          264.40
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="rcm-button-container"
+  >
+    <button
+      class="rcm-button cancel"
+    >
+      
+      Cancel Bill
+    
+    </button>
+     
+    <button
+      class="rcm-button confirm"
+    >
+      
+      Proceed
+    
+    </button>
+  </div>
+</div>
+`;
