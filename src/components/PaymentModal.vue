@@ -55,6 +55,14 @@ export default {
     };
   },
   methods: {
+    doSubmit() {
+      this.mode = 'processing';
+
+      setTimeout(() => {
+        this.$emit('payment:success', this.cash);
+        this.initModal();
+      }, 3000);
+    },
     initModal() {
       this.cash = '';
       this.mode = 'payment';
@@ -70,14 +78,9 @@ export default {
     },
     onSubmit() {
       this.submitted = true;
-      console.log(this.cash, this.total, this.notEnoughCash);
       if (this.invalidCash || this.notEnoughCash) return;
-      this.mode = 'processing';
 
-      setTimeout(() => {
-        this.$emit('payment:success', this.cash);
-        this.initModal();
-      }, 3000);
+      this.doSubmit();
     },
   },
   computed: {
