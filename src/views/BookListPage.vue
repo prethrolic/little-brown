@@ -131,10 +131,6 @@ export default {
     padding: 24px;
   }
 
-  &-store-title {
-    margin: 0;
-  }
-
   &-profile-container {
     display: flex;
     align-items: center;
