@@ -17,6 +17,32 @@ exports[`BookListPage.vue render all books 1`] = `
       >
         Little Brown Book Shop
       </h1>
+       
+      <div
+        class="blp-profile-container"
+      >
+        <div
+          class="blp-profile-picture"
+        >
+          <img
+            src="https://pbs.twimg.com/profile_images/1269585418107805697/6QKUkoWJ_400x400.jpg"
+          />
+        </div>
+         
+        <div
+          class="blp-profile-name"
+        >
+          John Doe
+        </div>
+         
+        <div
+          class="blp-logout-button"
+        >
+          
+          Logout
+        
+        </div>
+      </div>
     </div>
      
     <div

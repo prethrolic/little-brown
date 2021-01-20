@@ -1,9 +1,34 @@
 <template>
   <div id="app">
-    <router-view/>
+    <BookListPage />
   </div>
 </template>
+<script>
+import BookListPage from '@/views/BookListPage.vue';
 
+export default {
+  name: 'App',
+  components: {
+    BookListPage,
+  },
+  beforeMount() {
+    this.$liff.init({ liffId: process.env.VUE_APP_LIFF_ID }, () => {
+      if (process.env.VUE_APP_TEST_USER === 'TRUE') {
+        const displayName = 'John Doe';
+        const pictureUrl = 'https://pbs.twimg.com/profile_images/1269585418107805697/6QKUkoWJ_400x400.jpg';
+        this.$store.dispatch('change_user', { displayName, pictureUrl });
+      } else if (this.$liff.isLoggedIn()) {
+        this.$liff.getProfile().then((profile) => {
+          const { displayName, pictureUrl } = profile;
+          this.$store.dispatch('change_user', { displayName, pictureUrl });
+        }).catch((err) => console.error(err));
+      } else {
+        this.$liff.login();
+      }
+    });
+  },
+};
+</script>
 <style lang="scss">
 @import './assets/scss/variables.scss';
 

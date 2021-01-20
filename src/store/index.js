@@ -7,8 +7,12 @@ const store = new Vuex.Store({
   state: {
     cart: {},
     inPromotion: [],
+    user: {},
   },
   mutations: {
+    change_user(state, user) {
+      state.user = user;
+    },
     add_to_cart(state, book) {
       const cart = JSON.parse(JSON.stringify(state.cart));
       if (book.id in cart) {
@@ -38,6 +42,9 @@ const store = new Vuex.Store({
     },
   },
   actions: {
+    change_user(context, user) {
+      context.commit('change_user', user);
+    },
     add_to_cart(context, book) {
       context.commit('add_to_cart', book);
     },
