@@ -37,18 +37,40 @@
         </tr>
       </table>
     </div>
-    <div class='cart-payment-button'>
+    <div
+      :class="['cart-payment-button', { 'disabled' : isCartEmpty }]"
+      @click='onPayment'
+    >
       Pay with Cash
     </div>
+    <PaymentModal
+      :total='total'
+      :isOpen='isPaymentModalOpen'
+      @payment:cancel='isPaymentModalOpen = false'
+      @payment:success='onPaymentSuccess'
+    />
+    <ReceiptModal
+      :date='new Date()'
+      :cart='cart'
+      :user='user'
+      :paymentInfo='{ subtotal, discount, total, cash }'
+      :isOpen='isReceiptModalOpen'
+      @bill:cancel='isReceiptModalOpen = false'
+      @bill:success='onBillSuccess'
+    />
   </div>
 </template>
 <script>
 import CartItem from '@/components/CartItem.vue';
+import PaymentModal from '@/components/PaymentModal.vue';
+import ReceiptModal from '@/components/ReceiptModal.vue';
 
 export default {
   name: 'Cart',
   components: {
     CartItem,
+    PaymentModal,
+    ReceiptModal,
   },
   data() {
     return {
@@ -56,6 +78,9 @@ export default {
       cartItemList: [],
       inPromotion: [],
       tax: 0,
+      cash: '',
+      isPaymentModalOpen: false,
+      isReceiptModalOpen: false,
       scroll: false,
     };
   },
@@ -71,8 +96,20 @@ export default {
       this.cartItemList = Object.keys(this.cart);
       this.inPromotion = this.$store.state.inPromotion;
     },
+    onBillSuccess() {
+      this.$store.dispatch('clear_all');
+      window.location.reload();
+    },
     onClear() {
       this.$store.dispatch('clear_all');
+    },
+    onPayment() {
+      this.isPaymentModalOpen = true;
+    },
+    onPaymentSuccess(cash) {
+      this.isPaymentModalOpen = false;
+      this.cash = cash;
+      this.isReceiptModalOpen = true;
     },
     scrollToBottom() {
       const productContainer = this.$el.querySelector('.cart-products-container');
@@ -80,14 +117,6 @@ export default {
     },
   },
   computed: {
-    subtotal() {
-      let subtotal = 0;
-      this.cartItemList.forEach((id) => {
-        subtotal += this.cart[id].book.price * this.cart[id].count;
-      });
-
-      return subtotal.toFixed(2);
-    },
     discount() {
       let discount = 0;
       const promotedTitleCount = this.inPromotion.length;
@@ -103,8 +132,22 @@ export default {
 
       return discount.toFixed(2);
     },
+    isCartEmpty() {
+      return this.cartItemList.length === 0;
+    },
     total() {
       return (this.subtotal - this.discount + this.tax).toFixed(2);
+    },
+    subtotal() {
+      let subtotal = 0;
+      this.cartItemList.forEach((id) => {
+        subtotal += this.cart[id].book.price * this.cart[id].count;
+      });
+
+      return subtotal.toFixed(2);
+    },
+    user() {
+      return this.$store.state.user;
     },
   },
   watch: {
@@ -142,11 +185,6 @@ export default {
     margin: 24px 0;
   }
 
-  &-title {
-    text-align: left;
-    margin: 0;
-  }
-
   &-clear-button {
     margin-left: auto;
     display: flex;
@@ -163,6 +201,8 @@ export default {
 
     &:hover {
       background-color: $secondary-hover;
+      color: white;
+      cursor: pointer;
     }
   }
 
@@ -228,6 +268,12 @@ export default {
 
     &:hover {
       background-color: $primary-hover;
+    }
+
+    &.disabled {
+      background-color: $light-gray;
+      color: $dark-gray;
+      cursor: not-allowed;
     }
   }
 }
