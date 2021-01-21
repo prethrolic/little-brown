@@ -2,20 +2,25 @@ $url: '../assets/png/icon.png';
 
 .icon-minus {
   width: 16px; height: 16px;
-  background: url($url) -94px -10px;
+  background: url($url) -10px -93px;
 }
 
 .icon-plus {
   width: 16px; height: 16px;
-  background: url($url) -94px -46px;
+  background: url($url) -46px -93px;
 }
 
 .icon-search {
   width: 16px; height: 16px;
-  background: url($url) -10px -93px;
+  background: url($url) -82px -93px;
 }
 
 .icon-circle-notch {
   width: 64px; height: 63px;
   background: url($url) -10px -10px;
+}
+
+.icon-cart-32 {
+  width: 32px; height: 32px;
+  background: url($url) -94px -10px;
 }

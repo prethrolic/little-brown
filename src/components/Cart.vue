@@ -176,6 +176,7 @@ export default {
     flex-direction: column;
     padding: 24px;
     height: 100vh;
+    overflow-y: scroll;
     border-right: 1px solid $light-gray;
     background-color: $bg-gray;
   }
@@ -208,6 +209,8 @@ export default {
 
   &-products-container {
     height: 100%;
+    min-height: 200px;
+    margin-top: 16px;
     overflow-y: scroll;
   }
 
@@ -257,7 +260,7 @@ export default {
     justify-content: center;
     margin: 24px 0;
     width: 100%;
-    height: 112px;
+    min-height: 64px;
     border-radius: 12px;
     background-color: $primary;
     font-size: 20px;
@@ -285,5 +288,59 @@ table {
 
 td {
   padding-bottom: 8px;
+}
+
+@media(max-width: 1112px) {
+  .cart {
+    &-container {
+      flex: 0 0 35%;
+    }
+  }
+}
+
+@media(max-width: 1024px) {
+  .cart {
+    &-container {
+      flex: 0 0 60%;
+      padding: 24px 36px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .cart {
+    &-container {
+      flex: 0 0 70%;
+      padding: 24px 36px;
+    }
+
+    &-payment-button {
+      margin: 16px 0;
+      min-height: 48px;
+      font-size: 14px;
+    }
+
+    &-small-label, &-small-value  {
+      font-size: 12px;
+    }
+
+    &-large-label {
+      font-size: 14px;
+      text-align: left;
+    }
+
+    &-large-value {
+      font-size: 16px;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .cart {
+    &-container {
+      flex: 0 0 85%;
+      padding: 24px;
+    }
+  }
 }
 </style>

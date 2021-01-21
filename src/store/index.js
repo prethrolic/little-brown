@@ -8,6 +8,7 @@ const store = new Vuex.Store({
     cart: {},
     inPromotion: [],
     user: {},
+    windowWidth: window.innerWidth,
   },
   mutations: {
     change_user(state, user) {
@@ -40,6 +41,9 @@ const store = new Vuex.Store({
       state.cart = {};
       state.inPromotion = [];
     },
+    set_window_width(state) {
+      state.windowWidth = window.innerWidth;
+    },
   },
   actions: {
     change_user(context, user) {
@@ -53,6 +57,9 @@ const store = new Vuex.Store({
     },
     clear_all(context, book) {
       context.commit('clear_all', book);
+    },
+    set_window_width(context) {
+      context.commit('set_window_width');
     },
   },
 });
