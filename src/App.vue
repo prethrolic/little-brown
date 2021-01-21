@@ -27,10 +27,21 @@ export default {
       }
     });
   },
+  created() {
+    window.addEventListener('resize', () => { this.$store.dispatch('set_window_width'); });
+  },
 };
 </script>
 <style lang="scss">
 @import './assets/scss/variables.scss';
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: $secondary;
+}
 
 body, html {
   margin: 0;
@@ -55,23 +66,9 @@ h1, h2, h3 {
   margin: 0;
 }
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: $secondary;
-}
-
-#nav {
-  height: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+@media(max-width: 768px) {
+  h1 { font-size: 1.5em }
+  h2 { font-size: 1.2em }
+  h3 { font-size: 1.0em }
 }
 </style>

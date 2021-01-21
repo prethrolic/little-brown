@@ -54,6 +54,7 @@ export default {
     max-height: 100%;
     max-width: 100%;
     border-radius: 8px;
+    display: block;
   }
 
   &-count-modifier {
@@ -100,6 +101,31 @@ export default {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow-y: hidden;
+  }
+}
+
+@media(max-width: 600px) {
+  .cit {
+    &-container {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 2.5fr 2fr 1fr;
+      width: 100%;
+      grid-gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    &-cover-img {
+      display: none;
+    }
+    &-total-price, &-count-display {
+      font-size: 10px;
+    }
+
+    &-book-title {
+      font-size: 10px;
+      -webkit-line-clamp: 2;
+    }
   }
 }
 </style>

@@ -1,5 +1,11 @@
 # Little Brown Book Shop
 
+## Index
+1. [Description](#description)
+2. [Screenshots](#screenshots)
+3. [Deployment Notes](#deployment-notes)
+4. [Project Setup](#project-setup)
+
 ## Description
 This repository stores the implementation for *Little Brown Book Shop*'s POS system based on the requirement from LINE Frontend Interview.
 
@@ -12,13 +18,30 @@ Developed on Safari 14.0.2 ; Tested on Safari 14.0.2 and Google Chrome Version 8
 
 Live Demo: https://littlebrownies.herokuapp.com
 
-> **Note**: Please **disable Cross-origin Restriction** on browser when visiting the live demo (or please allow Cors on the server side). Go to `Develop > Disable Cross-Origin Restrictions` in Safari, or checkout [this extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for Google Chrome.
-
+> **Note**: Please **disable Cross-origin Restriction** on browser when visiting the live demo (or please allow CORS on the server side). Go to `Develop > Disable Cross-Origin Restrictions` in Safari, or checkout [this extension](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf) for Google Chrome.
 
 ## Screenshots
-![web-screenshots](./src/assets/png/screenshot_all.png)
 
-## Deployment Note
+Little Brown's POS consists of three main view elements for three main process -- Adding books from book list to the cart, Payment, and Displaying receipt
+
+| View | Screenshot |
+|----------|------------------|
+| Book List | ![book-list](src/assets/png/ss_01.png) |
+| Payment | ![payment](src/assets/png/ss_02.png) |
+| Receipt | ![receipt](src/assets/png/ss_03.png) |
+
+
+
+The webpage is also responsive to several screen dimensions. Check it out!
+
+| View | Screenshot |
+|----------|------------------|
+| Desktop | ![desktop-view](src/assets/png/ss_01.png) | 
+| Tablet | ![tablet-view-1](src/assets/png/ss_04.png) ![tablet-view-2](src/assets/png/ss_05.png) |
+| Mobile  | ![mobile-view-1](src/assets/png/ss_06.png) ![mobile-view-2](src/assets/png/ss_07.png) |
+
+
+## Deployment Notes
 Configuration for environment variables is required to deploy this project. Please see .env.example.
 
 | Variables             | Description                                                                                                                        | Example                                              |

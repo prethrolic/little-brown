@@ -94,9 +94,6 @@ export default {
     align-items: center;
   }
 
-  &-title {
-  }
-
   &-receipt-container {
     width: 30%;
     height: 60%;
@@ -168,6 +165,7 @@ export default {
 
   &-button-container {
     width: 30%;
+    min-width: 400px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -206,6 +204,45 @@ export default {
       &:hover {
         background-color: $light-gray-hover;
       }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .rcm {
+    &-receipt-container {
+      width: 80%;
+      min-width: 0;
+    }
+
+    &-information {
+      font-size: 8px;
+    }
+
+    &-button-container {
+      width: 50%;
+      min-width: 300px;
+    }
+
+    &-button {
+      margin: 24px 0;
+      border: none;
+      height: 48px;
+      width: 150px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .rcm {
+    &-receipt-container {
+      width: 80%;
+      min-width: 0;
+    }
+
+    &-button-container {
+      width: 80%;
     }
   }
 }

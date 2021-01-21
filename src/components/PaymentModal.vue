@@ -16,6 +16,7 @@
               :class="['pmd-cash-input', { 'error' : submitted && (invalidCash || notEnoughCash) }]"
               v-model='cash'
               placeholder = "ex. 2000"
+              autofocus
             />
           </div>
           <div class='pmd-error-message'>
@@ -149,7 +150,8 @@ export default {
   &-input-wrap {
     display: flex;
     align-items: center;
-    margin: 16px 0;
+    width: fit-content;
+    margin: 16px auto;
     padding: 4px 16px;
     background-color: $light-gray;
     border-radius: 8px;
@@ -162,7 +164,7 @@ export default {
 
   &-cash-input {
     font-size: 24px;
-    width: 160px;
+    width: 200px;
     margin-left: 16px;
   }
 
@@ -177,7 +179,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 24px 0;
+    margin: 16px auto;
     border: none;
     height: 64px;
     width: 250px;
@@ -202,6 +204,37 @@ export default {
   &-spinner-text {
     margin: 24px;
     color: $dark-gray;
+  }
+}
+
+@media(max-width: 1024px) {
+  .pmd {
+    &-container {
+      width: 80%;
+      height: 40%;
+      min-height: 400px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .pmd {
+    &-checkout-button {
+      height: 48px;
+      width: 200px;
+      font-size: 14px;
+      margin: 8px auto;
+    }
+
+    &-input-prefix {
+      font-size: 16px;
+    }
+
+    &-cash-input {
+      font-size: 16px;
+      width: 140px;
+      margin-left: 16px;
+    }
   }
 }
 </style>
