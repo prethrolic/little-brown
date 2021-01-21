@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BookListPage.vue render all books 1`] = `
+exports[`BookListPage.vue render all books without cart when screen width is <= 1024 1`] = `
 <div
   class="blp-view-container"
 >
@@ -15,6 +15,190 @@ exports[`BookListPage.vue render all books 1`] = `
       <!---->
     </div>
   </div>
+   
+  <div
+    class="blp-catalog-wrap"
+  >
+    <div
+      class="blp-header-container"
+    >
+      <h1
+        class="blp-store-title"
+      >
+        Little Brown Book Shop
+      </h1>
+       
+      <div
+        class="blp-profile-container"
+      >
+        <div
+          class="blp-profile-picture"
+        >
+          <img
+            src="https://pbs.twimg.com/profile_images/1269585418107805697/6QKUkoWJ_400x400.jpg"
+          />
+        </div>
+         
+        <div
+          class="blp-profile-name"
+        >
+          John Doe
+        </div>
+         
+        <div
+          class="blp-logout-button"
+        >
+          
+          Logout
+        
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="blp-tool-container"
+    >
+      <div
+        class="blp-search-bar"
+      >
+        <div
+          class="icon icon-search"
+        />
+         
+        <input
+          placeholder="Search.."
+          type="text"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="blp-products-container"
+    >
+      <div
+        class="blp-products-grid"
+      >
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BookListPage.vue render cart when cart button is clicked 1`] = `
+<div
+  class="blp-view-container"
+>
+  <div>
+    <div
+      class="blp-cart-backdrop"
+    >
+      <cart-stub />
+    </div>
+  </div>
+   
+  <div
+    class="blp-catalog-wrap"
+  >
+    <div
+      class="blp-header-container"
+    >
+      <h1
+        class="blp-store-title"
+      >
+        Little Brown Book Shop
+      </h1>
+       
+      <div
+        class="blp-profile-container"
+      >
+        <div
+          class="blp-profile-picture"
+        >
+          <img
+            src="https://pbs.twimg.com/profile_images/1269585418107805697/6QKUkoWJ_400x400.jpg"
+          />
+        </div>
+         
+        <div
+          class="blp-profile-name"
+        >
+          John Doe
+        </div>
+         
+        <div
+          class="blp-logout-button"
+        >
+          
+          Logout
+        
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="blp-tool-container"
+    >
+      <div
+        class="blp-search-bar"
+      >
+        <div
+          class="icon icon-search"
+        />
+         
+        <input
+          placeholder="Search.."
+          type="text"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="blp-products-container"
+    >
+      <div
+        class="blp-products-grid"
+      >
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+        <bookentrydisplay-stub
+          book="[object Object]"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`BookListPage.vue render cart when screen width is more than 1024px 1`] = `
+<div
+  class="blp-view-container"
+>
+  <cart-stub />
    
   <div
     class="blp-catalog-wrap"

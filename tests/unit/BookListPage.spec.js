@@ -35,12 +35,52 @@ describe('BookListPage.vue', () => {
     expect(global.fetch).toHaveBeenCalledWith(process.env.VUE_APP_BOOK_LIST_API, {"contentType": "application/json", "method": "GET"});
   });
 
-  it('render all books', async () => {
+  it('render all books without cart when screen width is <= 1024', async () => {
     const wrapper = shallowMount(BookListPage, {
       mocks: {
         $store: {
           state: {
             user,
+            windowWidth: 768,
+          },
+        },
+      },
+      localVue
+    });
+    await wrapper.setData({
+      displayBookList: bookList,
+    })
+    
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
+  it('render cart when cart button is clicked', async () => {
+    const wrapper = shallowMount(BookListPage, {
+      mocks: {
+        $store: {
+          state: {
+            user,
+            windowWidth: 768,
+          },
+        },
+      },
+      localVue
+    });
+    await wrapper.setData({
+      displayBookList: bookList,
+    })
+
+    await wrapper.find('.blp-cart-button').trigger('click');
+    expect(wrapper.element).toMatchSnapshot();
+  })
+
+  it('render cart when screen width is more than 1024px', async () => {
+    const wrapper = shallowMount(BookListPage, {
+      mocks: {
+        $store: {
+          state: {
+            user,
+            windowWidth: 1200,
           },
         },
       },
