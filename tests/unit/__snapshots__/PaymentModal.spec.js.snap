@@ -39,6 +39,7 @@ exports[`PaymentModal.vue render correctly for cash input 1`] = `
           </div>
            
           <input
+            autofocus="autofocus"
             class="pmd-cash-input"
             placeholder="ex. 2000"
           />

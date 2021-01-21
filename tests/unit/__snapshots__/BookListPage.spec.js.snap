@@ -4,7 +4,17 @@ exports[`BookListPage.vue render all books 1`] = `
 <div
   class="blp-view-container"
 >
-  <cart-stub />
+  <div>
+    <div
+      class="blp-cart-button"
+    >
+      <div
+        class="icon-cart-32"
+      />
+       
+      <!---->
+    </div>
+  </div>
    
   <div
     class="blp-catalog-wrap"
